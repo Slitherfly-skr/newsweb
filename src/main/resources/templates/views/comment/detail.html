@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻管理系统</title>
+</head>
+<body>
+<div th:replace="common/head::titleInfo"></div>
+
+<div>
+    <table width="80%" border="1" align="center">
+        <caption>新闻内容</caption>
+        <input type="button" class="btn"  value="返回" onclick="javascript:history.go(-1);"/>
+        <tr th:each="k : ${news}">
+            <th>新闻标题</th>
+            <td th:text="${news.newsTitle}"></td>
+            <th>新闻内容</th>
+            <td th:text="${news.newsContent}"></td>
+            <th>新闻类别</th>
+            <td th:text="${news.categoryName}"></td>
+            <th>新闻时间</th>
+            <td th:text="${news.newsDate}"></td>
+            <th>新闻图片</th>
+            <td th:text="${news.newsPicture}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

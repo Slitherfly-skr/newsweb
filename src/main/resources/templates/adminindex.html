@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <div th:replace="common/head::titleInfo"></div>
+    <ul>
+        <li><a href="/user/list">用户管理</a></li>
+        <li><a href="/category/list">栏目管理</a></li>
+        <li><a href="/news/list">新闻管理</a></li>
+        <li><a href="/comment/list">评论管理</a></li>
+    </ul>
+</body>
+</html>

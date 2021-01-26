@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻管理系统</title>
+</head>
+<body>
+
+
+    <div>
+        <form method="post" action="/user/update">
+        <table width="400" border="1" align="center">
+            <caption>修改用户信息</caption>
+            <input type="button" class="btn"  value="返回" onclick="javascript:history.go(-1);"/>
+            <tr>
+                <td colspan="2"><input type="hidden" name="userName" th:value="${user.userName}"></td>
+            </tr>
+            <tr>
+                <td>用户密码</td>
+                <td><input name="newsTitle" th:value="${user.userPassword}"></td>
+            </tr>
+<!--            <tr>-->
+<!--                <td>用户邮箱</td>-->
+<!--                <td><input name="newsContent" th:value="${user.getEmail()}"></td>-->
+<!--            </tr>-->
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="保存">
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>

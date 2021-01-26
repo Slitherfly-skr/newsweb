@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻管理系统</title>
+</head>
+<body>
+<div th:replace="common/head::titleInfo"></div>
+
+<div>
+    <form method="post" action="/news/add">
+        <table width="400" border="1" align="center">
+            <caption>添加新闻信息</caption>
+            <input type="button" class="btn"  value="返回" onclick="javascript:history.go(-1);"/>
+            <tr>
+                <td>新闻名称</td>
+                <td><input name="newsTitle"></td>
+            </tr>
+            <tr>
+                <td>新闻内容</td>
+                <td><input name="newsContent"></td>
+            </tr>
+            <tr>
+                <td>新闻时间</td>
+                <td><input name="newsDate"></td>
+            </tr>
+            <tr>
+                <td>新闻类别</td>
+                <td>
+                    <select name="newsCategoryID">
+                        <option th:each="k:${categorylist}" th:value="${k.categoryID}" th:text="${k.categoryName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>新闻图片</td>
+                <td><input name="newsPicture"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="新增">
+                </td>
+            </tr>
+        </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻管理系统</title>
+</head>
+<body>
+    <div th:replace="common/head::titleInfo"></div>
+
+    <div>
+        <table width="80%" border="1" align="center">
+            <caption>用户管理</caption>
+            <input type="button" class="btn"  value="返回" onclick="javascript:history.go(-1);"/>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            <tr th:each="k : ${list}">
+                <td th:text="${k.userID}"></td>
+                <td th:text="${k.userName}"></td>
+                <td>
+                    <a th:href="@{'/user/del/'+${k.userID}}">删除</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

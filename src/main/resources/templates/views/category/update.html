@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻管理系统</title>
+</head>
+<body>
+    <div th:replace="common/head::titleInfo"></div>
+
+    <div>
+        <form method="post" action="/category/update">
+        <table width="400" border="1" align="center">
+            <caption>修改栏目信息</caption>
+            <input type="button" class="btn"  value="返回" onclick="javascript:history.go(-1);"/>
+            <tr>
+                <td colspan="2"><input type="hidden" name="categoryID" th:value="${category.categoryID}"></td>
+            </tr>
+            <tr>
+                <td>栏目名称</td>
+                <td><input name="categoryName" th:value="${category.categoryName}"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="保存">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<form method="post" action="/login">
+<!--    <tr>-->
+<!--        <td style="color:red;" colspan="2" th:text="${errMsg}"></td>-->
+<!--    </tr>-->
+<!--    用户名：<input name="userName" type="text"><br>-->
+<!--    密码：<input name="userPassword" type="password"><br>-->
+<!--    <input type="submit" value="登录">-->
+<!--    <input type="button" onclick="javascript:window.location.href='regist'" value="去注册页面">-->
+    <table align="center">
+        <tr>
+            <td style="color:red;" colspan="2" th:text="${errMsg}"></td>
+        </tr>
+        <tr>
+            <td>用户名</td>
+            <td><input name="userName"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="userPassword" name="userPassword"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="left">
+                <input type="submit" value="登录">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1" align="right">
+                <input type="button" onclick="javascript:window.location.href='regist'" value="去注册页面">
+            </td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

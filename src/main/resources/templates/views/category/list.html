@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻管理系统</title>
+</head>
+<body>
+    <div th:replace="common/head::titleInfo"></div>
+
+    <div>
+        <a href="/category/add">添加</a>
+        <table width="80%" border="1" align="center">
+            <caption>栏目管理</caption>
+            <input type="button" class="btn"  value="返回" onclick="javascript:history.go(-1);"/>
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>操作</th>
+            </tr>
+            <tr th:each="k:${list}">
+                <td th:text="${k.categoryID}"></td>
+                <td th:text="${k.categoryName}"></td>
+                <td>
+                    <a th:href="@{'/category/del/'+${k.categoryID}}">删除</a>
+                    <a th:href="@{'/category/update/'+${k.categoryID}}">修改</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

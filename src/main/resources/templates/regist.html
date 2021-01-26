@@ -1,0 +1,59 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+<body>
+<form action="/regist" method="post">
+<!--    用户名：<input type="text" name="userName"><br>-->
+<!--    密码：<input type="password" name="userPassword"><br>-->
+<!--&lt;!&ndash;    性别：<input name="Sex" type="text"><br>&ndash;&gt;-->
+<!---->
+<!--    邮箱：<input name="Email"    性别：男<input name="sex" type="radio" class="sex"-->
+    <!--               style="width: 15px;width:15px;position:relative;top: 7px" value="男">-->
+    <!--    女<input name="sex" type="radio" class="sex"-->
+    <!--            style="width: 15px;width:15px;position:relative;top: 7px" value="女"><br> type="text"><br>-->
+<!--    <input type="submit" value="注册"><br>-->
+<!--    <input type="button" onclick="javascript:window.location.href='userlogin'" value="返回登录界面">-->
+    <table align="center">
+        <tr>
+            <td style="color:red;" colspan="2" th:text="${rgi_existmsg}"></td>
+        </tr>
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" name="userName"></td>
+            <td style="color:red;" colspan="2" th:text="${rgi_namemsg}"></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="userPassword"></td>
+            <td style="color:red;" colspan="2" th:text="${rgi_pwdmsg}"></td>
+        </tr>
+        <tr>
+            <td>性别</td>
+            <td>男<input name="sex" type="radio" class="sex"
+                        style="width: 15px;width:15px;position:relative;top: 7px" value="男" checked>
+                女<input name="sex" type="radio" class="sex"
+                        style="width: 15px;width:15px;position:relative;top: 7px" value="女"><br></td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td><input type="text" name="Email"></td>
+            <td style="color:red;" colspan="2" th:text="${rgi_emailmsg}"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="left">
+                <input type="submit" value="注册">
+            <td style="color:red;" colspan="2" th:text="${rgi_msg}"></td>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1" align="right">
+                <input type="button" onclick="javascript:window.location.href='login'" value="返回登录页面">
+            </td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
