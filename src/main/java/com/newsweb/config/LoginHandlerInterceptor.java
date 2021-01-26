@@ -13,7 +13,8 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
 
         //管理员登录成功后,会有管理员的session
         Object admin = request.getSession().getAttribute("loginAdmin");
-        if (admin == null) {
+        Object user = request.getSession().getAttribute("user");
+        if (admin == null ) {
             request.setAttribute("errMsg", "没有权限,请先登录");
             request.getRequestDispatcher("/adminlogin").forward(request, response);
             return false;

@@ -3,6 +3,7 @@ package com.newsweb;
 import com.newsweb.entity.Category;
 import com.newsweb.entity.Comment;
 import com.newsweb.entity.News;
+import com.newsweb.entity.User;
 import com.newsweb.mapper.CategoryMapper;
 import com.newsweb.mapper.CommentMapper;
 import com.newsweb.mapper.NewsMapper;
@@ -28,6 +29,7 @@ class NewswebApplicationTests {
     void contextLoads() {
 //        List<Comment> comment=  commentMapper.getAll();
 //        System.out.println( comment);
-        userMapper.delUser(3);
+//        userMapper.delUser(3);
+
     }
 }

@@ -1,6 +1,7 @@
 package com.newsweb.controller;
 
 import com.newsweb.entity.Category;
+import com.newsweb.entity.News;
 import com.newsweb.entity.User;
 import com.newsweb.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -72,17 +74,29 @@ public class UserController {
         return "views/user/usercenter";
     }
 
-    @GetMapping("/user/update/{name}")
-    public String updateuser(@PathVariable String name, Model model){
-        User k = this.userService.getUserByName(name);
+    @GetMapping("/user/userinformation")
+    public String updateuser(HttpSession session, Model model){
+        User user = (User) session.getAttribute("user");
+        User k = this.userService.getUserById(user.getUserID());
+        model.addAttribute("user",k);
+        return "views/user/userinformation";
+    }
+
+    @GetMapping("/user/update/{id}")
+    public String update(@PathVariable int id,Model model,HttpSession session){
+        User user = (User) session.getAttribute("user");
+        User k = userService.getUserById(id);
         model.addAttribute("user",k);
         return "views/user/update";
     }
 
-//    @PostMapping("/user/update")
-//    public String updateuser() {
-//        return "views/user/usercenter";
-//    }
+    @PostMapping("/user/update")
+    public String updateuser(User user,Model model) {
+        userService.updateUser(user);
+        System.out.println(user);
+        System.out.println("修改成功！");
+        return "redirect:/user/userinformation";
+    }
 }
 
 

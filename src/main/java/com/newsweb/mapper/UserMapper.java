@@ -33,6 +33,6 @@ public interface UserMapper {
     public boolean delUser(int userID);
 
     //修改用户资料
-    @Update("Update user set userName=#{userName},userPassword=#{userPassword},sex=#{sex},Email=#{Email} where userId=#{userId}")
+    @Update("Update user set userName=#{userName},userPassword=#{userPassword},sex=#{sex},Email=#{Email} where userID=#{userID}")
     public boolean updateUser(User user);
 }
